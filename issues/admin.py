@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from issues.models import Category, Status, Issue
+from issues.models import Category, Issue, Status
 
 
 class IssuesAdmin(admin.ModelAdmin):

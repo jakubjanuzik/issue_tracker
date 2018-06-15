@@ -1,0 +1,27 @@
+{% extends 'index.html' %}
+
+
+{% block content %}
+  <h1 class="ui header green">Issues List</h1>
+
+  <div class="ui large relaxed divided list">
+    {% for issue in object_list %}
+      <div class="item">
+        <div class="content">
+          <div class="header">
+              Submitter: {{ issue.submitter.username }} </br>
+              Solver: {{ issue.solver.username }}
+            </a>
+          </div>
+          <div class="description">
+            Description: {{ issue.description }} </br>
+            Status: {{ issue.status }}
+          </div>
+        </div>
+      </div>
+    {% empty %}
+      <h2 class="ui header green">There's no issues in database!</h2>
+    {% endfor %}
+  </div>
+{% endblock %}
+

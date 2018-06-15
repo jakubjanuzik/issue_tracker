@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block body %}
+  {% block header %}
+  <div class="ui fixed inverted menu">
+    <div class="ui container">
+      <a href="{% url 'issues_list' %}" class="header item">
+        Issue Tracker
+      </a>
+      <div class="ui simple dropdown item">
+        Issues <i class="dropdown icon"></i>
+        <div class="menu">
+          <a class="item" href="{% url 'issues_list' %}">List</a>
+          <a class="item" href="#">Add new issue</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endblock %}
+
+  {% block main %}
+  <div class="ui main container">
+    {% block content %}
+    {% endblock %}
+  </div>
+  {% endblock %}
+
+  {% block footer %}
+  <div class="ui inverted vertical footer segment">
+    <div class="ui center aligned container">
+      <div class="ui stackable inverted divided grid">
+        <div class="three wide column">
+          <h4 class="ui inverted header"></h4>
+        </div>
+      </div>
+      <div class="ui inverted section divider"></div>
+    </div>
+  </div>
+  {% endblock %}
+
+{% endblock %}
