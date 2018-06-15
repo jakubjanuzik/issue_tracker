@@ -14,3 +14,9 @@ createsuperuser:
 
 shell:
 	python manage.py shell --settings=issue_tracker.local_settings
+
+migrate:
+	python manage.py migrate --settings=issue_tracker.local_settings
+
+makemigrations:
+	python manage.py makemigrations --settings=issue_tracker.local_settings
