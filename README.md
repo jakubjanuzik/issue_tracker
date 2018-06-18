@@ -18,3 +18,10 @@ In order to use local_settings file, running application commands from `manage.p
 
 ## Makefile commands
 There's a makefile available to run specific commandsm e.g. running local server or running migrations. To run it simply use `make command_name`, for example: `make runserver` to run local server.
+
+## Permissions
+There are three permissions defining what use can or cannot do.
+To add/edit/remove them login as admin and go to "/admin/auth/permission/"
+    * codename: can_add_issue - Determines whether or not user can add new issue
+    * codename: can_edit_issue - Determines whether or not user can edit existing issue
+    * codename: can_delete_issue - Determines whether or not user can delete issue

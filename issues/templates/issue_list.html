@@ -7,6 +7,16 @@
   <div class="ui large relaxed divided list">
     {% for issue in object_list %}
       <div class="item">
+        {% if perms.can_edit_issue or perms.can_delete_issue %}
+          <div class="right floated content">
+            {% if perms.can_edit_issue %}
+              <a class="ui button" href="{% url 'issue_update' pk=issue.pk %}">EDIT</a>
+            {% endif %}
+            {% if perms.can_delete_issue %}
+              <a class="ui button" href="{% url 'issue_delete' pk=issue.pk %}">DELETE</a>
+            {% endif %}
+          </div>
+        {% endif %}
         <div class="content">
           <div class="header">
               Submitter: {{ issue.submitter.username }} </br>
@@ -15,7 +25,8 @@
           </div>
           <div class="description">
             Description: {{ issue.description }} </br>
-            Status: {{ issue.status }}
+            Status: {{ issue.status.display_name }} </br>
+            Category: {{ issue.category.display_name }}
           </div>
         </div>
       </div>
