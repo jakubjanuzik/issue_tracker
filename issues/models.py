@@ -32,3 +32,6 @@ class Issue(models.Model):
     description = models.TextField()
     status = models.ForeignKey(Status, on_delete=models.CASCADE)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    creation_datetime = models.DateTimeField(auto_now_add=True)
+    completion_datetime = models.DateTimeField()
+    completed = models.BooleanField(default=False)

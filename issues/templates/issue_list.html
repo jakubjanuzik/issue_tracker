@@ -3,6 +3,9 @@
 
 {% block content %}
   <h1 class="ui header green">Issues List</h1>
+  <h3 class="ui header">Average completion time : {{ average_completion }}</h3>
+  <h3 class="ui header">Max completion time : {{ max_completion }}</h3>
+  <h3 class="ui header">Din completion time : {{ min_completion }}</h3>
 
   <div class="ui large relaxed divided list">
     {% for issue in object_list %}

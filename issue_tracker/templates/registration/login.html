@@ -1,0 +1,17 @@
+{% extends 'registration/base_login.html' %}
+
+{% block title %}Log in{% endblock %}
+
+{% block page_content %}
+<form class="ui form" method="post">
+  {% csrf_token %}
+  {% for field in form %}
+  <div class="field">
+    <label for>{{ field.label_tag }}</label>
+    {{ field }}
+  </div>
+  {% endfor %}
+  <button class="ui button" type="submit">Login</button>
+</form>
+
+{% endblock %}

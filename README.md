@@ -25,3 +25,16 @@ To add/edit/remove them login as admin and go to "/admin/auth/permission/"
     * codename: can_add_issue - Determines whether or not user can add new issue
     * codename: can_edit_issue - Determines whether or not user can edit existing issue
     * codename: can_delete_issue - Determines whether or not user can delete issue
+
+## Setting up database
+
+Database is Make sure you have installed postgres. Then enter shell as root and:
+
+```
+postgres=# create database "issue_tracker";
+CREATE DATABASE
+postgres=# grant all privileges on database issue_tracker to <<user>>;
+GRANT
+```
+
+Change setting in local_settings.py!
